@@ -1,0 +1,17 @@
+{
+    "name": "lo/poo",
+    "autoload": {
+        "psr-4": {
+            "App\\Core\\": "core/",
+            "App\\Model\\": "models/",
+            "App\\Controller\\": "controllers/"
+        }
+    },
+    "authors": [{
+        "name": "LOMBAYE",
+        "email": "lombayedev@gmail.com"
+    }],
+    "require": {
+
+    }
+}
