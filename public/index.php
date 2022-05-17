@@ -1,20 +1,18 @@
 <?php
+
+use App\Core\Request;
+// namespace App\Core;
+
 require("../vendor/autoload.php");
-
-
-use App\Model\Professeur;
-// require("../models/Professeur.php")
-
+require_once("../core/fonctions.php");
 
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
 
-Professeur::findAll();
-
-// Namespace=>package (conteneur ou repertoire virtuel qui permet de ranger
-// des classes qui sont du mm domaine ) 
-
-
+$request=new Request();
+$request->getUri();
+dd($request->isPost());
+// $request->isGet();
 
 

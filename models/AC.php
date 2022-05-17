@@ -15,9 +15,22 @@ $this->inscriptions=[];
 // echo($this->role);
 }
 public static function findAll():array{
-    $sql="select *from ".parent::table()."where role like 'ROLE_AC'";
-    echo $sql;
-    return [];
+    $db=parent::database();
+    $db->connexionBD();
+    $sql="select id,`nom_complet`,`role`,`login`,`password` from ".parent::table()." where role like 'ROLE_AC'";
+    $results=$db->executeSelect($sql);
+    $db->closeConnexion();
+    
+    return $results;
 }
-  
+public function insert():int{
+    // methode heritee faut mettre parent
+      $db=parent::database();
+      $db->connexionBD();
+      $sql="INSERT INTO `personne` (`nom_complet`, `role`,`login`,`password`) VALUES (?,?,?,?);";
+      $result=$db->executeUpdate($sql,[$this->nomComplet,parent::$role,$this->login,$this->password]);
+      $db->closeConnexion();
+     
+      return $result;
+    }
 }

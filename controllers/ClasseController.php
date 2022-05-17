@@ -1,4 +1,5 @@
 <?php
+// les controleurs ont pour role d implementer les use cases
 namespace App\Controller;
 
 class ClasseController{

@@ -14,10 +14,13 @@ class Database{
        $query=$this->pdo->prepare($sql);
        $query->execute($data);
        if($single){
+        //    donnee sous format objet
         //    if true
-            $result = $query->fetch();
+            $result = $query->fetch(\PDO::FETCH_OBJ);
+            if($query->rowCount()==0) return NULL ;
        }else{
-          $result=$query->fetchAll();
+        //fetch_assoc recupere le nom des colonnes
+          $result=$query->fetchAll(\PDO::FETCH_OBJ);
        }
         return $result;
     }
