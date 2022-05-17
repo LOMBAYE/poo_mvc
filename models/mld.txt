@@ -79,3 +79,27 @@ partagent plusieurs classes
 // $ins=new Inscription();
 // $ins->ac();
 // $ins->anneeScolaire();
+// Professeur::findAll();
+
+
+
+// Namespace=>package (conteneur ou repertoire virtuel qui permet de ranger
+// des classes qui sont du mm domaine ) 
+
+// $prof=new AC();
+// $prof->setNomComplet("abdou");
+// $prof->setLogin("abdou");
+// $prof->setPassword("abdou");
+
+// $prof->insert();
+
+// $profs=User::findAll();
+// var_dump($profs);
+
+$userConnect=User::findUserByLoginAndPassword("rama","rama");
+die_dump($userConnect);
+
+$request=new Request();
+$request->getUri();
+dd($request->isPost());
+// $request->isGet();
