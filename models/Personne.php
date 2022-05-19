@@ -1,11 +1,12 @@
 <?php
 namespace App\Model;
+
 use App\Core\Model;
 
 abstract class Personne extends Model{
     //attributs d instance(specifique a chaque objet)
     protected int $id;
-    protected string $nomComplet;
+    protected string $nom_complet;
     protected static string $role;
 
     //attributs de classes ou statiques 
@@ -24,8 +25,8 @@ abstract class Personne extends Model{
    public function getId():int{
        return $this->id;
    }
-   public function getNomComplet():string{
-       return $this->nomComplet;
+   public function getnom_complet():string{
+       return $this->nom_complet;
  }
  
 public static function getNbrePersonne():int{
@@ -36,8 +37,8 @@ public function setId(int $id):self{
     $this->id=$id;
     return $this;
 }
-public function setNomComplet(string $nomComplet):void{
-    $this->nomComplet=$nomComplet;
+public function setnom_complet(string $nom_complet):void{
+    $this->nom_complet=$nom_complet;
 }
 public static function setNbrePersonne(int $nbrePersonne):void{
      self::$nbrePersonne=$nbrePersonne;

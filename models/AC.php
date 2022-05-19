@@ -28,7 +28,7 @@ public function insert():int{
       $db=parent::database();
       $db->connexionBD();
       $sql="INSERT INTO `personne` (`nom_complet`, `role`,`login`,`password`) VALUES (?,?,?,?);";
-      $result=$db->executeUpdate($sql,[$this->nomComplet,parent::$role,$this->login,$this->password]);
+      $result=$db->executeUpdate($sql,[$this->nom_complet,parent::$role,$this->login,$this->password]);
       $db->closeConnexion();
      
       return $result;

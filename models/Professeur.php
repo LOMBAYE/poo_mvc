@@ -13,16 +13,16 @@ public function classes():array {
 return [];
   }
   public static function findAll():array{
-    $sql="select `grade`,id,`nom_complet`,`role` from ? where role like 'ROLE_PROFESSEUR'";
+    $sql="select `nom_complet`,`grade` from ".parent::table()." where role like ?";
 
-    return parent::findBy($sql,[parent::table()]);
+    return parent::findBy($sql,['ROLE_PROFESSEUR']);
 }
 public function insert():int{
 // methode heritee faut mettre parent
   $db=parent::database();
   $db->connexionBD();
   $sql="INSERT INTO `personne` (`nom_complet`, `role`,`grade`) VALUES (?,?,?);";
-  $result=$db->executeUpdate($sql,[$this->nomComplet,parent::$role,$this->grade]);
+  $result=$db->executeUpdate($sql,[$this->nom_complet,parent::$role,$this->grade]);
   $db->closeConnexion();
  
   return $result;
