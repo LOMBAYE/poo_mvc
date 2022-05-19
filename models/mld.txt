@@ -103,3 +103,9 @@ $request=new Request();
 $request->getUri();
 dd($request->isPost());
 // $request->isGet();
+
+$router=new Router();
+// chemin relatif faut associer un use
+// chemin absolu nom de la classe App\Controller\SecurityController ou SecurityController::class
+$router->route('/login',[SecurityController::class,"authentication"]);
+$router->route('/logout',[SecurityController::class,"deconnexion"]);

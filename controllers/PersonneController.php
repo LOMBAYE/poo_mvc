@@ -1,6 +1,10 @@
 <?php
 namespace App\Controller;
 
-class PersonneController{
+use App\Core\Controller;
 
+class PersonneController extends Controller{
+    public function lister(){
+        $this->render('personne/liste');
+    }
 }

@@ -19,9 +19,19 @@ public function route(string $uri,array $action){
 public function resolve(){
     $uri="/".$this->request->getUri()[0];
     if(isset($this->routes[$uri])){
-        dd("route existe");
+       $route= $this->routes[$uri];
+    //    operat° de destruct°
+    // [$ctrClass,$action]<=>$ctrClass=$route[0] et $action=$route[1]
+       [$ctrClass,$action]=$route;
+       if(class_exists($ctrClass) && method_exists($ctrClass,$action)){
+        $ctrl= new $ctrClass($this->request);//$crtl=new SecurityController()
+        //$ctrl->authentification() 
+        call_user_func(array($ctrl,$action));
+       }else{
+            throw new RouteNotFoundException();
+       }
     }else{
-        throw new RouteNotFoundException();
+            throw new RouteNotFoundException();
     }
 }
 }

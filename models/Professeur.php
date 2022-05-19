@@ -13,13 +13,9 @@ public function classes():array {
 return [];
   }
   public static function findAll():array{
-    $db=parent::database();
-    $db->connexionBD();
-    $sql="select * from ".parent::table()." where role like 'ROLE_PROFESSEUR'";
-    $results=$db->executeSelect($sql);
-    $db->closeConnexion();
-    
-    return $results;
+    $sql="select `grade`,id,`nom_complet`,`role` from ? where role like 'ROLE_PROFESSEUR'";
+
+    return parent::findBy($sql,[parent::table()]);
 }
 public function insert():int{
 // methode heritee faut mettre parent
