@@ -43,7 +43,6 @@ public function resolve(){
                  header('location:login');
             }
         }else{
-            // dd('okkk');
             throw new RouteNotFoundException();
         }
     }else{

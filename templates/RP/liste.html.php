@@ -1,4 +1,8 @@
 
+<?php 
+    use App\Core\HtmlProvider;
+    HtmlProvider::navInfo(text:$titre,link:"/newrp");
+?>
 <div class="container mt-5 ml-5">
 
 <table class="table table-bordeless">

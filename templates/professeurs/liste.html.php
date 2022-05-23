@@ -1,4 +1,7 @@
-<?=$titre?>
+<?php 
+    use App\Core\HtmlProvider;
+    HtmlProvider::navInfo(text:$titre,link:"/newprof");
+?>
 <div class="container mt-5 ml-5">
 
 <table class="table table-bordeless">
@@ -16,8 +19,8 @@
              <tr>
             <td><?= $i++ ?></td>
             <td class="font-weight-bold"><?= $prof->nom_complet ?></td>
-            <td><?= $prof->grade ?></td>
-            <td><?= $prof->role ?></td>
+            <td><?= $prof->grade?></td>
+            <td><?= $prof->role?></td>
             <td  class="text-center">
                 <button class="btn btn-warning btn-sm">Modifier</button>
                 <button class="btn btn-danger btn-sm">Supprimer</button>

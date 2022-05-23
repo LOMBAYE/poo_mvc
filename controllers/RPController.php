@@ -9,7 +9,10 @@ class RPController extends Controller{
         // dd($rp);
         $this->render("RP/liste",[
            "rp" =>$rp,
-           "titre"=>"Liste des responsables pédagogiques"
+           "titre"=>"Les responsables pédagogiques"
         ]);
+    }
+    public function ajouterRp(){
+        $this->render('RP/ajouterrp');
     }
 }

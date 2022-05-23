@@ -1,13 +1,15 @@
 
+<?php 
+    use App\Core\HtmlProvider;
+    HtmlProvider::navInfo($titre,"dark",6,"New Ac","secondary","/newac");
+?>
 <div class="container mt-5 ml-5">
 
 <table class="table table-bordeless">
         <tr class="bg-info">
             <th>#</th>
             <th>Nom Complet</th>
-            <th>Login</th>
             <th>Role</th>
-
             <th class="text-center">Actions</th>
         </tr>
 
@@ -17,7 +19,6 @@
              <tr>
             <td><?= $i++ ?></td>
             <td class="font-weight-bold"><?= $attaches->nom_complet ?></td>
-            <td><?= $attaches->login ?></td>
             <td><?= $attaches->role ?></td>
 
             <td  class="text-center">

@@ -17,10 +17,15 @@ $router->route('/login',[SecurityController::class,"authentification"]);
 $router->route('/logout',[SecurityController::class,"deconnexion"]);
 $router->route('/personnes',[PersonneController::class,"lister"]);
 $router->route("/profs", [ProfesseurController::class, "listerProfs"]);
+$router->route("/newprof", [ProfesseurController::class, "ajouterProf"]);
 $router->route("/etudiants", [EtudiantController::class, "listerEtudiants"]);
+$router->route("/newetu", [EtudiantController::class, "ajouterEtu"]);
 $router->route("/users", [UserController::class, "listerUsers"]);
 $router->route("/rp", [RPController::class, "listerRP"]);
+$router->route("/newrp", [RPController::class, "ajouterRp"]);
 $router->route("/ac", [ACController::class, "listerAC"]);
+$router->route("/newac", [ACController::class, "ajouterAc"]);
+
 
 
 

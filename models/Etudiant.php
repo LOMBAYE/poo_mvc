@@ -51,8 +51,7 @@ public function __construct() {
     }
 
     public static function findAll():array{
-        // $sql="select *from ".parent::table()." where role like 'ROLE_ETUDIANT'";
-        $sql="select `nom_complet`,`role` from ".parent::table()." where role like ?";
+        $sql="select *from ".parent::table()." where role like ?";
         return parent::findBy($sql,['ROLE_ETUDIANT']);
     
     }

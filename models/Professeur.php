@@ -13,7 +13,7 @@ public function classes():array {
 return [];
   }
   public static function findAll():array{
-    $sql="select `nom_complet`,`grade` from ".parent::table()." where role like ?";
+    $sql="select `role`,`nom_complet`,`grade` from ".parent::table()." where role like ?";
 
     return parent::findBy($sql,['ROLE_PROFESSEUR']);
 }

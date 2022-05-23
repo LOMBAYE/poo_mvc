@@ -9,10 +9,11 @@
     <title>Document</title>
 </head>
 <body class="">
-<?php require_once($Constantes::ROOT()."templates/layout/navbar.html.php"); ?>
+    <div class="container">   
+        <?php require_once($Constantes::ROOT()."templates/layout/navbar.html.php"); ?>
 
-   <?= $content_for_views ?> 
-
+        <?= $content_for_views ?> 
+    </div>
 <script src="<?= $Constantes::WEB_ROOT."js/bootstrap.js"?>"></script>
 </body>
 </html>

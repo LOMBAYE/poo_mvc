@@ -14,4 +14,7 @@ class EtudiantController extends Controller{
         ]);
 
     }
+    public function ajouterEtu(){
+        $this->render('etudiant/ajouteretu');
+    }
 }

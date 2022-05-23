@@ -1,11 +1,14 @@
 
+<?php 
+    use App\Core\HtmlProvider;
+    HtmlProvider::navInfo(text:$titre,link:"/newetu");
+?>
 <div class="container mt-5 ml-5">
 
 <table class="table table-bordeless">
         <tr class="bg-info">
             <th>#</th>
             <th>Nom Complet</th>
-            <th>Login</th>
             <th>Role</th>
             <th class="text-center">Actions</th>
         </tr>
@@ -16,7 +19,6 @@
              <tr>
             <td><?= $i++ ?></td>
             <td class="font-weight-bold"><?= $etud->nom_complet ?></td>
-            <td><?= $etud->login ?></td>
             <td><?= $etud->role ?></td>
 
             <td  class="text-center">

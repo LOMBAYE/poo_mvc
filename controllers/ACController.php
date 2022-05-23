@@ -9,8 +9,11 @@ class ACController extends Controller{
         // $this->render('AC/listerAc');
         $this->render("AC/listerAc",[
             "ac" =>$ac,
-            "titre"=>"liste des Attachees"
+            "titre"=>"Les Attaches"
          ]);
        
+    }
+    public function ajouterAc(){
+        $this->render('AC/ajouterac');
     }
 }
