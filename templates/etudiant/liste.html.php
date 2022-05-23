@@ -7,7 +7,6 @@
             <th>Nom Complet</th>
             <th>Login</th>
             <th>Role</th>
-
             <th class="text-center">Actions</th>
         </tr>
 

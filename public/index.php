@@ -1,16 +1,14 @@
 <?php
+session_start();
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(E_ALL);
 
-use App\Model\RP;
-use App\Model\Etudiant;
-use App\Model\Professeur;
 
 require("../vendor/autoload.php");
 require_once("../core/fonctions.php");
 require_once("../routes/route.web.php");
 
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(E_ALL);
 
 
 // $router->resolve();
@@ -18,9 +16,9 @@ error_reporting(E_ALL);
 
 // $etudiants = Etudiant::findAll();
 // dd(RP::findAll());
-// $etudiant=new RP();
-// $etudiant->setMatricule("0000re");
-// $etudiant->setSexe('F');
-// $etudiant->setnom_complet("El Hadj");
+// $etudiant=new Etudiant();
+// $etudiant->setMatricule("000001");
+// $etudiant->setSexe('M');
+// $etudiant->setnom_complet("Bigmo");
 // $etudiant->setAdresse("Gwye");
 // $etudiant->insert();

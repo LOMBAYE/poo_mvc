@@ -50,7 +50,7 @@ abstract class User extends Personne{
     }
 
     public static function findUserByLoginAndPassword(string $login,string $password):object|null{
-         return parent::findBy("select *from personne where login=? and password=?",[$login,$password],true);
+         return parent::findBy("select * from personne where login=? and password=?",[$login,$password],true);
     }
     public static function findAll():array{
         // $db=parent::database();

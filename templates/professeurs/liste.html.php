@@ -9,7 +9,7 @@
             <th>Role</th>
             <th class="text-center">Actions</th>
         </tr>
-
+        
         <?php
         $i=1;
             foreach ($profs as $prof){ ?>

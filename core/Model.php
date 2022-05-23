@@ -41,6 +41,19 @@ public  static function table(){
       // echo $sql;
         return $result;
     }
+    public static function searchAll($attributes="*",$column="",$search=""):array{
+        $db=self::database();
+        $db->connexionBD();
+        if($column!="" && $search!=""){
+            $sql="select $attributes from ".self::table()." where $column like '$search'";
+        }else{
+            $sql="select $attributes from ". self::table();
+        }
+      $result=$db->executeSelect($sql);
+      $db->closeConnexion();
+      return $result;
+
+    } 
     public static function findById(int $id):object|null{
         $db=self::database();
         $db->connexionBD();

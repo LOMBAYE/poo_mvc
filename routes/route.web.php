@@ -13,7 +13,7 @@ use App\Exception\RouteNotFoundException;
 $router=new Router();
 // chemin relatif faut associer un use
 // chemin absolu nom de la classe App\Controller\SecurityController ou SecurityController::class
-$router->route('/login',[SecurityController::class,"authentication"]);
+$router->route('/login',[SecurityController::class,"authentification"]);
 $router->route('/logout',[SecurityController::class,"deconnexion"]);
 $router->route('/personnes',[PersonneController::class,"lister"]);
 $router->route("/profs", [ProfesseurController::class, "listerProfs"]);

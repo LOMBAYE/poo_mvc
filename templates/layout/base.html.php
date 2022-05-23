@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body class="">
+<?php require_once($Constantes::ROOT()."templates/layout/navbar.html.php"); ?>
 
    <?= $content_for_views ?> 
 

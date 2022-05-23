@@ -32,4 +32,9 @@ class Session{
 
         return $this;
     }
+     public static function isConnect(){
+        // aly
+        return isset($_SESSION['user-connect']);
+
+    }
 }

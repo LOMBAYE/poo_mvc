@@ -6,9 +6,10 @@ class Role{
     public function __construct(Session $session) {
         $this->session = $session;
     }
-    public static function isConnect(){
+    // public static function isConnect(){
+       
 
-    }
+    // }
     public static function isRP(){
 
     }

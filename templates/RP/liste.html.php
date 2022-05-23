@@ -5,18 +5,15 @@
         <tr class="bg-info">
             <th>#</th>
             <th>Nom Complet</th>
-            <th>Login</th>
             <th>Role</th>
             <th class="text-center">Actions</th>
         </tr>
-
         <?php
         $i=1;
             foreach ($rp as $rpp){ ?>
              <tr>
             <td><?= $i++ ?></td>
             <td class="font-weight-bold"><?= $rpp->nom_complet ?></td>
-            <td><?= $rpp->login?></td>
             <td><?= $rpp->role?></td>
             <td  class="text-center">
                 <button class="btn btn-warning btn-sm">Modifier</button>
