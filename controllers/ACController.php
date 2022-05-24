@@ -16,4 +16,13 @@ class ACController extends Controller{
     public function ajouterAc(){
         $this->render('AC/ajouterac');
     }
+    public function inscrireAc(){
+       extract($_POST);
+       $ac=new AC();
+       $ac->setnom_complet($_POST['nom_complet']);
+       $ac->setLogin($_POST['login']);
+       $ac->setPassword($_POST['password']);
+       $ac->insert();
+     $this->listerAC();
+    }
 }

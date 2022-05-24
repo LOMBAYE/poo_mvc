@@ -1,7 +1,7 @@
 
 <?php 
     use App\Core\HtmlProvider;
-    HtmlProvider::navInfo(text:$titre,link:"/newrp");
+    HtmlProvider::navInfo(text:$titre,link:"/newrp",textBtn:"Ajouter RP");
 ?>
 <div class="container mt-5 ml-5">
 

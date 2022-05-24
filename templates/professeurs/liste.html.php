@@ -1,6 +1,6 @@
 <?php 
     use App\Core\HtmlProvider;
-    HtmlProvider::navInfo(text:$titre,link:"/newprof");
+    HtmlProvider::navInfo(text:$titre,link:"/newprof",textBtn:"Nouveau Prof");
 ?>
 <div class="container mt-5 ml-5">
 

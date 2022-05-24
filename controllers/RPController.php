@@ -15,4 +15,12 @@ class RPController extends Controller{
     public function ajouterRp(){
         $this->render('RP/ajouterrp');
     }
+    public function inscrireRp(){
+        extract($_POST);
+        $rp=new RP();
+        $rp->setnom_complet($_POST['nom_complet']);
+        $rp->setLogin($_POST['login']);
+        $rp->insert();
+      $this->listerRP();
+     }
 }

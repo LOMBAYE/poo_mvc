@@ -19,4 +19,7 @@ class Role{
     public static function isEtudiant(){
 
     }
+    public static function getRole(){
+        return $_SESSION['user-connect']->role;
+    }
 }

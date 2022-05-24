@@ -21,5 +21,13 @@ class ProfesseurController extends Controller
     public function ajouterProf(){
         $this->render('professeurs/ajouterprof');
     }
+    public function inscrireProf(){
+        extract($_POST);
+        $prof=new Professeur();
+        $prof->setnom_complet($_POST['nom_complet']);
+        $prof->setGrade($_POST['grade']);
+        $prof->insert();
+      $this->listerProfs();
+     }
   
 }
