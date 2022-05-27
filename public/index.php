@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
@@ -10,9 +11,8 @@ require_once("../core/fonctions.php");
 require_once("../routes/route.web.php");
 
 
-
 // $router->resolve();
-// dd(Professeur::findAll());
+// dd(Classe::findAll());
 
 // $etudiants = Etudiant::findAll();
 // dd(RP::findAll());

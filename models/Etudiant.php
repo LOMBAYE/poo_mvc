@@ -58,11 +58,20 @@ public function __construct() {
     public function insert():int{
           $db=parent::database();
           $db->connexionBD();
-          $sql="INSERT INTO `personne` (`nom_complet`, `role`,`sexe`,`adresse`) VALUES (?,?,?,?);";
-          $result=$db->executeUpdate($sql,[$this->nom_complet,parent::$role,$this->sexe,$this->adresse]);
+          $sql="INSERT INTO `personne` (`nom_complet`, `role`,`login`,`password`,`sexe`,`adresse`) VALUES (?,?,?,?,?,?);";
+          $result=$db->executeUpdate($sql,[$this->nom_complet,parent::$role,$this->login,$this->password,$this->sexe,$this->adresse]);
           $db->closeConnexion();
          
           return $result;
-        }
+    }
+    public function update():int{
+        $db=parent::database();
+        $db->connexionBD();
+        $sql="Update " .self::table()." set matricule=? where id=? ";
+        $result=$db->executeUpdate($sql,[$this->matricule,$this->id]);
+        $db->closeConnexion();
+       
+        return $result;
+    }
     
 }

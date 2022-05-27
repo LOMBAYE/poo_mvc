@@ -2,9 +2,9 @@
     use App\Core\HtmlProvider;
     HtmlProvider::navInfo(text:$titre,link:"/newprof",textBtn:"Nouveau Prof");
 ?>
-<div class="container mt-5 ml-5">
+<div class="container mt-5">
 
-<table class="table table-bordeless">
+<table class="table table-bordeless text-white bg-gradient white">
         <tr class="bg-info">
             <th>#</th>
             <th>Nom Complet</th>
@@ -22,8 +22,9 @@
             <td><?= $prof->grade?></td>
             <td><?= $prof->role?></td>
             <td  class="text-center">
-                <button class="btn btn-warning btn-sm">Modifier</button>
-                <button class="btn btn-danger btn-sm">Supprimer</button>
+                <a class="btn btn-warning btn-sm">Modifier</a>
+                <a class="btn btn-danger btn-sm">Supprimer</a>
+                <a href="/professeur/<?=$prof->id?>" class="btn btn-outline-primary btn-sm " >Details</a>
             </td>
         </tr>
 <?php    }

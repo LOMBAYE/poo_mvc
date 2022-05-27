@@ -14,45 +14,40 @@
 
 
             <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example18">Nom Complet</label>
               <input type="text" id="form2Example18" class="form-control form-control-lg" name="nom_complet"/>
-              <label class="form-label" for="form2Example18">Nom Complet</label>
             </div>
-
             <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example28">Login</label>
               <input type="text" id="form2Example28" class="form-control form-control-lg" name="login"/>
-              <label class="form-label" for="form2Example28">Login</label>
             </div>
             <div class="form-outline mb-4">
-              <input type="Password" id="form2Example28" class="form-control form-control-lg" name="password"/>
-              <label class="form-label" for="form2Example28">Password</label>
+            <label class="form-label" for="form2Example18">Adresse</label>
+              <input type="text" id="form2Example18" class="form-control form-control-lg" name="adresse"/>
             </div>
-            <div class="form-outline mb-4">
-              <input type="Password" id="form2Example28" class="form-control form-control-lg" name="password"/>
-              <label class="form-label" for="form2Example28">Confirm Password</label>
-            </div>
+       
             <div class="form-outline mb-4 form-check form-check-inline">
-
+            <div>
+            <label class="form-label display-6" for="sexe">Sexe</label>
+          </div>
           <div class="form-check form-check-inline">
-            <label for="sexe" class="form-label">Homme</label>
+            <label for="sexe" class="form-label">M</label>
             <input class="btn" type="radio" value="H" name="sexe">
           </div>
           <div class="form-check form-check-inline">
-            <label for="sexe" class="form-label">Femme</label>
+            <label for="sexe" class="form-label">F</label>
             <input class="btn" type="radio" value="F" name="sexe">
           </div>
-          <div>
-            <label class="form-label display-6" for="sexe">Sexe</label>
-          </div>
+        
             </div>
-            <div class="form-outline mb-4">
-              <input type="text" id="form2Example18" class="form-control form-control-lg" name="adresse"/>
-              <label class="form-label" for="form2Example18">Adresse</label>
-            </div>
-            <div class="form-outline mb-4">
-              <input type="text" id="form2Example18" class="form-control form-control-lg" name="matricule"/>
-              <label class="form-label" for="form2Example18">Matricule</label>
-            </div>
-
+            <select class="form-select" aria-label="Default select example" name="classe">
+                 <option disabled selected>--Choisir la classe--</option>
+                 <?php
+                  foreach($classes as $classe){?>
+                 <option value="<?= $classe->id?>"><?= $classe->libelle?></option>
+                 <?php }
+                 ?>
+            </select>
             <div class="pt-1 mb-4">
               <button class="btn btn-info btn-lg btn-block">Inscrire</button>
             </div>

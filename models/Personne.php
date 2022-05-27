@@ -22,9 +22,9 @@ abstract class Personne extends Model{
 
    //Getters(permettent d obtenir la valeur d un attribut prive a l exterieur de la classe)
    //Setters(modifier la valeur de l attribut)
-   public function getId():int{
+   /* public function getId():int{
        return $this->id;
-   }
+   } */
    public function getnom_complet():string{
        return $this->nom_complet;
  }
@@ -33,10 +33,10 @@ public static function getNbrePersonne():int{
 return self::$nbrePersonne;
 }
 
-public function setId(int $id):self{
+/* public function setId(int $id):self{
     $this->id=$id;
     return $this;
-}
+} */
 public function setnom_complet(string $nom_complet):void{
     $this->nom_complet=$nom_complet;
 }
@@ -44,4 +44,24 @@ public static function setNbrePersonne(int $nbrePersonne):void{
      self::$nbrePersonne=$nbrePersonne;
     }
   
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 }

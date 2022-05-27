@@ -28,6 +28,6 @@ class Database{
         $query=$this->pdo->prepare($sql);
         $query->execute($data);
         //lors de l execut° d une methode insert=>retourner le dernier id genere
-        return $query->rowCount();
+        return $this->pdo->lastInsertId();
     }
 } 

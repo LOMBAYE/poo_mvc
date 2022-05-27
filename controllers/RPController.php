@@ -16,6 +16,7 @@ class RPController extends Controller{
         $this->render('RP/ajouterrp');
     }
     public function inscrireRp(){
+        if ($this->request->isPost()){
         extract($_POST);
         $rp=new RP();
         $rp->setnom_complet($_POST['nom_complet']);
@@ -23,4 +24,6 @@ class RPController extends Controller{
         $rp->insert();
       $this->listerRP();
      }
+     $this->ajouterRp();
+    }
 }

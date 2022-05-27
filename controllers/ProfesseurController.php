@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Core\Controller;
 use App\Model\Professeur;
+use App\Core\Model;
 
 class ProfesseurController extends Controller
 {
@@ -12,6 +13,8 @@ class ProfesseurController extends Controller
     }
     public function listerProfs(){
         $profs = Professeur::findAll();
+        // $profs = Professeur::searchAll();
+
         // dd($profs);
         $this->render('professeurs/liste', [
             "titre"=> "Les Professeurs",
@@ -22,12 +25,23 @@ class ProfesseurController extends Controller
         $this->render('professeurs/ajouterprof');
     }
     public function inscrireProf(){
-        extract($_POST);
+        if($this->request->isPost()){
+         extract($_POST);
         $prof=new Professeur();
         $prof->setnom_complet($_POST['nom_complet']);
         $prof->setGrade($_POST['grade']);
         $prof->insert();
-      $this->listerProfs();
+        $this->listerProfs();
+        }
+        $this->ajouterProf();
+
+     }
+     public function details($id)
+     {
+       $prof=Professeur::findById($id);
+    //    dd($prof);
+       $this->render('professeurs/details',["prof"=>$prof]);
+       
      }
   
 }

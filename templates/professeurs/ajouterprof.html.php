@@ -18,11 +18,12 @@
               <label class="form-label" for="form2Example18">Nom Complet</label>
             </div>
 
-            <div class="form-outline mb-4">
-              <input type="text" id="form2Example28" class="form-control form-control-lg" name="grade"/>
-              <label class="form-label" for="form2Example28">Grade</label>
-            </div>
-       
+            <select class="form-select" aria-label="Default select example" name="grade">
+                 <option disabled selected>Grade du prof</option>
+                  <option value="Docteur">Docteur</option>
+                  <option value="Ingenieur">Ingenieur</option>
+                  <option value="Technicien superieur">Technicien superieur</option>
+            </select>
 
             <div class="pt-1 mb-4">
               <button class="btn btn-info btn-lg btn-block" >Inscrire</button>

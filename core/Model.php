@@ -41,7 +41,7 @@ public  static function table(){
       // echo $sql;
         return $result;
     }
-    public static function searchAll($attributes="*",$column="",$search=""):array{
+    public static function searchAll($attributes="*",$column=[],$search=""):array{
         $db=self::database();
         $db->connexionBD();
         if($column!="" && $search!=""){
@@ -62,7 +62,7 @@ public  static function table(){
     // ?=>joker
     //?=>0,?=>1  position des joker a respecter
         $sql="select * from ".self::table()." where id=?";
-     $result=$db->executeSelect($sql,[$id]);
+     $result=$db->executeSelect($sql,[$id],true);
         $db->closeConnexion();
         // echo $sql;
         return $result;

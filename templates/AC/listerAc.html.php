@@ -3,9 +3,9 @@
     use App\Core\HtmlProvider;
     HtmlProvider::navInfo($titre,"dark",6,"New Ac","secondary","/newac");
 ?>
-<div class="container mt-5 ml-5">
+<div class="container mt-5">
 
-<table class="table table-bordeless">
+<table class="table table-bordeless text-white bg-gradient white">
         <tr class="bg-info">
             <th>#</th>
             <th>Nom Complet</th>

@@ -19,6 +19,10 @@ public function route(string $uri,array $action){
 // le cas echeant executer l action correspondante
 public function resolve(){
     $uri="/".$this->request->getUri()[0];
+    $params=$this->request->getUri();
+    unset($params[0]);
+    $params=(count($params)>=1)?array_values($params):[];
+    
     if(isset($this->routes[$uri])){
        $route= $this->routes[$uri];
     //    operat° de destruct°
@@ -35,9 +39,9 @@ public function resolve(){
         
         // dd($freetest);
             if(in_array("*",$free)|| in_array($freetest,$free)){
-                call_user_func(array($ctrl,$action));
+                call_user_func_array(array($ctrl,$action),$params);
             }elseif(Session::isConnect()){//test si session existe
-                call_user_func(array($ctrl,$action));
+                call_user_func_array(array($ctrl,$action),$params);
             }else{
                 // throw new RouteNotFoundException();
                  header('location:login');
